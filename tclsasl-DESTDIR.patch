@@ -1,0 +1,21 @@
+diff -durN tclsasl-1.0.orig/Makefile.am tclsasl-1.0/Makefile.am
+--- tclsasl-1.0.orig/Makefile.am	Sun Jun 16 00:29:42 2002
++++ tclsasl-1.0/Makefile.am	Tue Jun 10 09:29:41 2003
+@@ -18,12 +18,12 @@
+ libtclsasl_la_LIBADD = $(LIB_TCL) $(LIB_SASL)
+ 
+ install-exec-hook:
+-	$(mkinstalldirs) @PKG_TCL@
++	$(mkinstalldirs) $(DESTDIR)@PKG_TCL@
+ 	echo	"package ifneeded sasl"					   \
+ 		`echo $(VERSION) | awk -F. '{ printf "%s.%s", $$1, $$2 }'` \
+-		"[list load $(DESTDIR)$(libdir)/libtclsasl.so]"		   \
+-	    > @PKG_TCL@/pkgIndex.tcl
++		"[list load $(libdir)/libtclsasl.so]"		   \
++	    > $(DESTDIR)@PKG_TCL@/pkgIndex.tcl
+ 	sed -e 's%load .libs/libtclsasl.so%package require sasl%' \
+ 	    < test.tcl      					     \
+-	    > @PKG_TCL@/test.tcl
+-	cp doc/tclsasl.html @PKG_TCL@/
++	    > $(DESTDIR)@PKG_TCL@/test.tcl
++	cp doc/tclsasl.html $(DESTDIR)@PKG_TCL@/
