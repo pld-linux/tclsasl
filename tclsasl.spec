@@ -14,6 +14,7 @@ URL:		http://beepcore-tcl.sourceforge.net/%{name}.html
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	cyrus-sasl-devel >= 2.0
+BuildRequires:	cyrus-sasl-sasldb >= 2.0
 BuildRequires:	libtool
 BuildRequires:	tcl-devel >= 8.3.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -55,4 +56,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS doc/tclsasl.html
-%{_libdir}/*
+%{_libdir}/sasl*
