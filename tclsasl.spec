@@ -37,9 +37,12 @@ rm -f config/missing
 %{__aclocal} -I config
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	libdir=%{_libdir}
 
-%{__make} LIB_TCL="-ltcl" LIB_SASL="-lsasl -R %{_libdir}/sasl2 -L%{_libdir}/sasl2 -lsasldb"
+%{__make} \
+	LIB_TCL="-ltcl" \
+	LIB_SASL="-lsasl -R %{_libdir}/sasl2 -L%{_libdir}/sasl2 -lsasldb"
 
 %install
 rm -rf $RPM_BUILD_ROOT
