@@ -37,8 +37,7 @@ rm -f config/missing
 %{__aclocal} -I config
 %{__autoconf}
 %{__automake}
-%configure \
-	libdir=%{_libdir}
+%configure
 
 %{__make} \
 	LIB_TCL="-ltcl" \
@@ -60,7 +59,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS doc/tclsasl.html
-%{_libdir}/sasl*
+%{_prefix}/lib/sasl*
 %{_libdir}/*.la
 %attr(755,root,root)  %{_libdir}/*.so.*.*
 %attr(755,root,root)  %{_libdir}/*.so
