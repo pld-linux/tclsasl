@@ -1,0 +1,11 @@
+--- tclsasl-1.0.orig/configure.in	Sat Jun  8 09:09:04 2002
++++ tclsasl-1.0/configure.in	Tue Jun 10 09:11:23 2003
+@@ -14,6 +14,7 @@
+ 
+ AC_INIT(tclsasl.c)
+ AC_CONFIG_AUX_DIR(config)
++AM_INIT_AUTOMAKE([tclsasl],[1.0])
+ CONFIGDIR=${srcdir}/config
+ AC_SUBST(CONFIGDIR)
+ AC_PROG_CC
+
