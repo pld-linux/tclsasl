@@ -1,0 +1,23 @@
+diff -durN tclsasl-1.0.orig/configure.in tclsasl-1.0/configure.in
+--- tclsasl-1.0.orig/configure.in	Sat Jun  8 09:09:04 2002
++++ tclsasl-1.0/configure.in	Tue Jun 10 08:55:18 2003
+@@ -192,19 +192,6 @@
+ AC_SUBST(SHLIB_LDFLAGS)
+ 
+ #--------------------------------------------------------------------
+-# Set the default compiler switches based on the --enable-symbols 
+-# option.
+-#--------------------------------------------------------------------
+-
+-SC_ENABLE_SYMBOLS
+-
+-if test "${SHARED_BUILD}" = "1" ; then
+-    CFLAGS='${CFLAGS_DEFAULT} ${CFLAGS_WARNING} ${SHLIB_CFLAGS}'
+-else
+-    CFLAGS='${CFLAGS_DEFAULT} ${CFLAGS_WARNING}'
+-fi
+-
+-#--------------------------------------------------------------------
+ # Everyone should be linking against the Tcl stub library.  If you
+ # can't for some reason, remove this definition.  If you aren't using
+ # stubs, you also need to modify the SHLIB_LD_LIBS setting below to
