@@ -57,3 +57,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS doc/tclsasl.html
 %{_libdir}/sasl*
+%{_libdir}/*.la
+%attr(755,root,root)  %{_libdir}/*.so.*.*
+%attr(755,root,root)  %{_libdir}/*.so
