@@ -13,8 +13,8 @@ Patch2:		%{name}-DESTDIR.patch
 URL:		http://beepcore-tcl.sourceforge.net/%{name}.html
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	cyrus-sasl-devel >= 2.0
 BuildRequires:	libtool
-BuildRequires:	openssl-devel >= 0.9.7
 BuildRequires:	tcl-devel >= 8.3.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
