@@ -11,12 +11,18 @@ Patch0:		%{name}-CFLAGS.patch
 Patch1:		%{name}-automake.patch
 Patch2:		%{name}-DESTDIR.patch
 URL:		http://beepcore-tcl.sourceforge.net/%{name}.html
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool
 BuildRequires:	openssl-devel >= 0.9.7
 BuildRequires:	tcl-devel >= 8.3.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Tcl SASL provides a Tcl interface to the Cyrus SASLv2 library.
+
+%description -l pl
+Tcl SASL udostêpnia interfejs Tcl-a do biblioteki Cyrus SASLv2.
 
 %prep
 %setup -q
