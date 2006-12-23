@@ -1,21 +1,23 @@
-diff -durN tclsasl-1.0.orig/Makefile.am tclsasl-1.0/Makefile.am
---- tclsasl-1.0.orig/Makefile.am	Sun Jun 16 00:29:42 2002
-+++ tclsasl-1.0/Makefile.am	Tue Jun 10 09:29:41 2003
-@@ -18,12 +18,12 @@
+diff -urN tclsasl-1.0.org/Makefile.am tclsasl-1.0/Makefile.am
+--- tclsasl-1.0.org/Makefile.am	2002-06-16 00:29:42.000000000 +0200
++++ tclsasl-1.0/Makefile.am	2006-12-23 13:03:26.263685250 +0100
+@@ -18,12 +18,14 @@
  libtclsasl_la_LIBADD = $(LIB_TCL) $(LIB_SASL)
  
  install-exec-hook:
 -	$(mkinstalldirs) @PKG_TCL@
-+	$(mkinstalldirs) $(DESTDIR)@PKG_TCL@
++	for d in @PKG_TCL@; do \
++		$(mkinstalldirs) $(DESTDIR)$$d; \
  	echo	"package ifneeded sasl"					   \
  		`echo $(VERSION) | awk -F. '{ printf "%s.%s", $$1, $$2 }'` \
 -		"[list load $(DESTDIR)$(libdir)/libtclsasl.so]"		   \
 -	    > @PKG_TCL@/pkgIndex.tcl
 +		"[list load $(libdir)/libtclsasl.so]"		   \
-+	    > $(DESTDIR)@PKG_TCL@/pkgIndex.tcl
++	    > $(DESTDIR)$$d/pkgIndex.tcl; \
  	sed -e 's%load .libs/libtclsasl.so%package require sasl%' \
  	    < test.tcl      					     \
 -	    > @PKG_TCL@/test.tcl
 -	cp doc/tclsasl.html @PKG_TCL@/
-+	    > $(DESTDIR)@PKG_TCL@/test.tcl
-+	cp doc/tclsasl.html $(DESTDIR)@PKG_TCL@/
++	    > $(DESTDIR)$$d/test.tcl; \
++	cp doc/tclsasl.html $(DESTDIR)$$d/; \
++	done
