@@ -1,5 +1,5 @@
 Summary:	SASL Tcl extension
-Summary(pl):	Rozszerzenie SASL dla Tcl
+Summary(pl.UTF-8):   Rozszerzenie SASL dla Tcl
 Name:		tclsasl
 Version:	1.0
 Release:	3
@@ -22,8 +22,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Tcl SASL provides a Tcl interface to the Cyrus SASLv2 library.
 
-%description -l pl
-Tcl SASL udostêpnia interfejs Tcl-a do biblioteki Cyrus SASLv2.
+%description -l pl.UTF-8
+Tcl SASL udostÄ™pnia interfejs Tcl-a do biblioteki Cyrus SASLv2.
 
 %prep
 %setup -q
