@@ -1,8 +1,8 @@
 Summary:	SASL Tcl extension
 Summary(pl.UTF-8):	Rozszerzenie SASL dla Tcl
 Name:		tclsasl
-Version:	1.0
-Release:	4
+Version:	1.0.1
+Release:	5
 License:	distributable
 Group:		Development/Languages/Tcl
 Source0:	http://beepcore-tcl.sourceforge.net/%{name}-%{version}.tgz
@@ -51,7 +51,8 @@ install -d $RPM_BUILD_ROOT
 	DESTDIR="$RPM_BUILD_ROOT"
 
 # TCL_PACKAGE_PATH is /usr/lib for all archs
-rm $RPM_BUILD_ROOT%{_prefix}/lib/sasl-*/*.html
+rm $RPM_BUILD_ROOT/sasl-*/*.{html,tcl}
+rm $RPM_BUILD_ROOT%{_prefix}/lib/*.{html,tcl}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -59,7 +60,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS doc/tclsasl.html
-%{_prefix}/lib/sasl*
 %{_libdir}/*.la
-%attr(755,root,root)  %{_libdir}/*.so.*.*
+%attr(755,root,root)  %{_libdir}/*.so.*
 %attr(755,root,root)  %{_libdir}/*.so
