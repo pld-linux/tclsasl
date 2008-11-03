@@ -1,7 +1,7 @@
 Summary:	SASL Tcl extension
 Summary(pl.UTF-8):	Rozszerzenie SASL dla Tcl
 Name:		tclsasl
-Version:	1.0.1
+Version:	1.0
 Release:	5
 License:	distributable
 Group:		Development/Languages/Tcl
