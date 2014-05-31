@@ -9,3 +9,14 @@
  AC_SUBST(CONFIGDIR)
  AC_PROG_CC
 
+--- tclsasl-1.0/Makefile.am~	2002-06-16 00:29:42.000000000 +0200
++++ tclsasl-1.0/Makefile.am	2014-05-31 22:29:37.126051441 +0200
+@@ -1,7 +1,7 @@
+ # Makefile.am for the Tcl SRV RR library
+ # 
+ 
+-LIB_TCL		= -ltcl83
++LIB_TCL		= @TCL_LIB_SPEC@ @TCL_STUB_LIB_SPEC@
+ LIB_SASL	= @CYRUS_LIBS@
+ 
+ tclsasl_version = 1:0:1

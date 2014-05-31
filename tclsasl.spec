@@ -2,7 +2,7 @@ Summary:	SASL Tcl extension
 Summary(pl.UTF-8):	Rozszerzenie SASL dla Tcl
 Name:		tclsasl
 Version:	1.0
-Release:	8
+Release:	9
 License:	distributable
 Group:		Development/Languages/Tcl
 Source0:	http://beepcore-tcl.sourceforge.net/%{name}-%{version}.tgz
@@ -40,7 +40,6 @@ rm -f config/missing
 %configure
 
 %{__make} \
-	LIB_TCL="-ltcl" \
 	LIB_SASL="-lsasl -R %{_libdir}/sasl2 -L%{_libdir}/sasl2 -lsasldb"
 
 %install
