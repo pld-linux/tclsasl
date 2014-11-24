@@ -10,7 +10,7 @@ Source0:	http://beepcore-tcl.sourceforge.net/%{name}-%{version}.tgz
 Patch0:		%{name}-CFLAGS.patch
 Patch1:		%{name}-automake.patch
 Patch2:		%{name}-DESTDIR.patch
-URL:		http://beepcore-tcl.sourceforge.net/%{name}.html
+URL:		http://beepcore-tcl.sourceforge.net/tclsasl.html
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	cyrus-sasl-devel >= 2.0
